@@ -1,0 +1,996 @@
+
+/*
+ * POKEBALL 
+ */
+
+/* animation frame! rotation movement of the pokeball */
+@-webkit-keyframes spinning {
+  0% {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(325deg);
+    -webkit-transform: rotate(325deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+}
+
+@-webkit-keyframes translating {
+  0% {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+}
+
+@-webkit-keyframes color-change {
+	0%, 20%, 40%, 60%, 100% {
+	    background-color: #fff;
+	}
+	10%, 30%, 50%, 70%, 90% {
+	    background-color: #f00;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #f001d4;
+}
+
+#Mateus {
+	width: 715px;
+	height: 500px;
+	margin: 0 auto;
+	position: absolute;
+	left: 40%;
+}
+
+#Mateus #moving-container {
+	width: 10em;
+	height: 10em;
+	margin: 10px auto 70px;
+	position: relative;
+	left: -10em;
+	-webkit-animation: translating 5s infinite;
+}
+/* pokeball container */
+#Mateus #pokeball-container {
+	width: 10em;
+	height: 10em;
+	margin: 20px auto;
+  	-webkit-animation: spinning 5s infinite;
+}
+
+#Mateus #pokeball { 
+	width: 10em;
+	height: 10em;
+	background-color: #fff;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+}
+
+#Mateus #pokeball::before {
+	content: '';
+	background-color: red;
+	border-radius: 5em 5em 0 0;
+	width: 10em;
+	height: 5em;
+	position: absolute;
+}
+
+#Mateus #pokeball .pokeball-details {
+	width: 10em;
+	height: 1em;
+	background-color: #333;
+	position: absolute;
+	top: 4.5em;
+}
+
+
+/* the pokemon's button or whatever it is */
+#Mateus #pokeball .pokeball-details::before {
+	content: '';
+	width: 3.5em;
+	height: 3.5em;
+	border-radius: 50%;
+	background-color: #333;
+	position: absolute;
+	top: -1.25em;
+	left: 3.25em;
+	z-index: 200;
+}
+
+#Mateus #pokeball .pokeball-details::after {
+	content: '';
+	width: 1.8em;
+	height: 1.8em;
+	border: 0.3em solid white;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: -0.65em;
+	left: 3.80em;
+	margin: 0 auto;
+	z-index: 250;
+	-webkit-animation: color-change 3s infinite;
+}
+
+
+/*
+ * CHARMANDER 
+ */
+
+#Mateus #charmander {
+	position: relative;
+	width: 10em;
+	height: 12em;
+	float: left;
+}
+#Mateus #charmander #body {
+	width: 8em;
+	height: 13em;
+	background-color: #e88923;
+	border-radius: 5em 5em 0 0;
+	z-index: 150;
+	position: relative;
+}
+
+#Mateus #charmander #feet::before {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #e88923;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 12em;
+}
+
+#Mateus #charmander #feet::after {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #e88923;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 12em;
+	left: 6em;
+}
+
+#Mateus #charmander #eyes::before {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 1em;
+}
+
+#Mateus #charmander #eyes::after {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 4.5em;
+}
+
+#Mateus #charmander #pupils::before {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 5.25em;
+}
+
+#Mateus #charmander #pupils::after {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 1.75em;
+}
+
+#Mateus #charmander #nostrils::before {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3em;
+}
+
+#Mateus #charmander #nostrils::after {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3.75em;
+}
+
+#Mateus #charmander #mouth::before {
+	content: '';
+	width: 1.25em;
+	height: 0.75em;
+	background-color: #942e58;
+	border-radius: 0 0 3em 3em;
+	position: absolute;
+	top: 3.75em;
+	left: 2.85em;
+}
+
+#Mateus #charmander #belly {
+	content: '';
+	width: 5.5em;
+	height: 5.5em;
+	background-color: #f8e393;
+	border-radius: 2em 2em 0 2em;
+	position: absolute;
+	top: 7.5em;
+	left: 0.5em;
+	z-index: 10;
+}
+
+#Mateus #charmander #tail::before {
+	content: '';
+	width: 3em;
+	height: 2.75em;
+	background-color: #e88923;
+	border-radius: 0 0 2em 0;
+	position: absolute;
+	top: 10em;
+	left: 8em;
+	z-index: 10;
+}
+
+#Mateus #charmander #tail::after {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #f001d4;
+	border-radius: 0 0 50% 0;
+	position: absolute;
+	top: 9.50em;
+	left: 8em;
+	z-index: 10;
+}
+
+#Mateus #charmander #tail-tip {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #e88923;
+	border-radius: 2em 2em 0 0;
+	position: absolute;
+	top: 9em;
+  	left: 9.5em;
+	z-index: 30;
+}
+
+#Mateus #charmander #arms::before {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #e88923;
+	border-radius: 2em 0 0 2em;
+	position: absolute;
+	top: 5.75em;
+	left: -1.5em;
+	z-index: 10;
+}
+
+#Mateus #charmander #arms::after {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #e88923;
+	border-radius: 0 2em 2em 0;
+	position: absolute;
+	top: 5.75em;
+	left: 7.75em;
+	z-index: 10;
+}
+
+#Mateus #charmander #flame {
+	content: '';
+	width: 2.5em;
+	height: 2.5em;
+	overflow: hidden;
+  	border-bottom-right-radius: 50%;
+ 	border-bottom-left-radius: 50%; 
+	border-top-left-radius: 50%;
+	-webkit-transform:rotate(-45deg);
+	background-color: #FFB800;
+	position: absolute;
+	top: 8em;
+	left: 9em;
+	z-index: 300;
+
+}
+
+/*
+ * BULBASAUR
+ */
+
+#Mateus #bulbasaur {
+	position: relative;
+	float: left;
+	left: 3em;
+	width: 10em;
+	height: 12em;
+	top: 1em;
+}
+#Mateus #bulbasaur #body {
+	content: '';
+	width: 12em;
+	height: 7em;
+	top: 5em;
+	left: 2em;
+	background-color: #89e1bc;
+	border-radius: 0 8em 8em 8em;
+	z-index: 150;
+	position: absolute;
+}
+
+#Mateus #bulbasaur #head {
+	width: 9em;
+	height: 7em;
+	left: 1em;
+	top: 1em;
+	background-color: #89e1bc;
+	border-radius: 1em 0 0 1em;
+	z-index: 200;
+	position: absolute;
+}
+
+#Mateus #bulbasaur #eyes::before, #Mateus #squirtle #eyes::before {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 1em;
+}
+
+#Mateus #bulbasaur #eyes::after, #Mateus #squirtle #eyes::after {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 4.5em;
+}
+
+#Mateus #bulbasaur #pupils::before, #Mateus #squirtle #pupils::before {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 5.25em;
+}
+
+#Mateus #bulbasaur #pupils::after, #Mateus #squirtle #pupils::after {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 1.75em;
+}
+
+#Mateus #bulbasaur #nostrils::before, #Mateus #squirtle #nostrils::before {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3em;
+}
+
+#Mateus #bulbasaur #nostrils::after, #Mateus #squirtle #nostrils::after {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3.75em;
+}
+
+#Mateus #bulbasaur .mouth, #Mateus #squirtle #mouth {
+	content: '';
+	width: 1.25em;
+	height: 0.75em;
+	background-color: #942e58;
+	border-radius: 0 0 3em 3em;
+	position: absolute;
+	top: 3.75em;
+	left: 2.85em;
+}
+
+#Mateus #bulbasaur #front-feet::before {
+	content: '';
+	width: 2em;
+	height: 5em;
+	background-color: #89e1bc;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 8em;
+	left: 2em;
+}
+
+#Mateus #bulbasaur #front-feet::after {
+	content: '';
+	width: 2em;
+	height: 5em;
+	background-color: #89e1bc;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 8em;
+	left: 5em;
+}
+
+#Mateus #bulbasaur #back-feet::before {
+	content: '';
+	width: 2em;
+	height: 5em;
+	background-color: #89e1bc;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 8em;
+	left: 12em;
+}
+
+#Mateus #bulbasaur #back-feet::after {
+	content: '';
+	width: 2em;
+	height: 5em;
+	background-color: #89e1bc;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 8em;
+	left: 9em;
+}
+
+#Mateus #bulbasaur #bulb::before {
+	content: '';
+	width: 11em;
+	height: 11em;
+	overflow: hidden;
+  	border-bottom-right-radius: 50%;
+ 	border-bottom-left-radius: 50%; 
+	border-top-left-radius: 50%;
+	-webkit-transform:rotate(-45deg);
+	background-color: #6aac34;
+	position: absolute;
+	top: -1em;
+	left: 5em;
+}
+
+#Mateus #bulbasaur #bulb::after {
+	content: '';
+	background-color: #6aac34;
+	border-radius: 0 0 3em 2em;
+	position: absolute;
+	top: 1em;
+	left: 5em;
+}
+
+
+#Mateus #bulbasaur .ears::before {
+	content: '';
+	width: 1em;
+	height: 4em;
+	left: 2em;
+	top: 1em;
+	background-color: #89e1bc;
+	border-radius: 4em 4em 0 4em;
+	z-index: 150;
+	position: absolute;
+	top: 0.25em;
+	left: 2em;
+}
+
+#Mateus #bulbasaur .ears::after {
+	content: '';
+	width: 1em;
+	height: 4em;
+	background-color: #89e1bc;
+	border-radius: 4em 4em 0 4em;
+	z-index: 150;
+	position: absolute;
+	top: 0.25em;
+	left: 9em;
+}
+
+#Mateus #bulbasaur .spots {
+	content: '';
+	background-color: #006359;
+	border-radius: 1em;
+	z-index: 500;
+	position: absolute;
+}
+
+.spot1 {
+	width: 1.5em;
+	height: 1.5em;
+	top: 1.25em;
+  	left: 8em;
+}
+
+.spot2 {
+	width: 1em;
+	height: 1em;
+	top: 2.25em;
+	left: 9.75em;
+}
+
+.spot3 {
+	width: 1em;
+	height: 1em;
+	top: 3em;
+	left: 8.60em;
+}
+
+/*
+ * SQUIRTLE
+ */
+
+#Mateus #squirtle {
+  position: relative;
+  float: left;
+  left: 13em;
+  width: 10em;
+  height: 12em;
+  top: 0;
+}
+
+#Mateus #squirtle #body {
+	width: 8em;
+	height: 13em;
+	background-color: #ffe69c;
+	border-radius: 5em 5em 2em 4em;
+	z-index: 150;
+	position: relative;
+}
+
+#Mateus #squirtle #head {
+	content: '';
+	width: 8em;
+	height: 8em;
+	background-color: #94d5cd;
+	border-radius: 4em;
+	position: absolute;
+	top: 0em;
+	z-index: 300;
+}
+
+#Mateus #squirtle #feet::before {
+	content: '';
+	width: 2em;
+	height: 3em;
+	background-color: #94d5cd;
+	border-radius: 1em;
+	position: absolute;
+	top: 11em;
+	left: 1em;
+	z-index: 500;
+}
+
+#Mateus #squirtle #feet::after {
+	content: '';
+	width: 2em;
+	height: 3em;
+	background-color: #94d5cd;
+	border-radius: 1em;
+	position: absolute;
+	top: 11em;
+	left: 5em;
+	z-index: 400;
+}
+
+#Mateus #squirtle #arms::before {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #94d5cd;
+	border-radius: 2em 0 0 2em;
+	position: absolute;
+	top: 5.75em;
+	left: -1.5em;
+	z-index: 10;
+}
+
+#Mateus #squirtle #arms::after {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #94d5cd;
+	border-radius: 0 2em 2em 0;
+	position: absolute;
+	top: 5.75em;
+	left: 7.75em;
+	z-index: 50;
+}
+
+#Mateus #squirtle #shell::before {
+	content: '';
+	width: 3em;
+	height: 10em;
+	background-color: #DDDBDB;
+	border-radius: 0 2em 2em 0;
+	position: absolute;
+	top: 2.75em;
+	left: 6em;
+	z-index: 10;
+}
+
+#Mateus #squirtle #shell::after {
+	content: '';
+	width: 3em;
+	height: 8.5em;
+	background-color: #bd6a00;
+	border-radius: 0 3em 3em 0;
+	position: absolute;
+	top: 3.5em;
+	left: 8em;
+	z-index: 5;
+}
+
+#Mateus #squirtle #tail::before {
+	content: '';
+	width: 3em;
+	height: 6.5em;
+	background-color: #94d5cd;
+	border-radius: 0 3em 3em 0;
+	position: absolute;
+	top: 4.5em;
+	left: 9.5em;
+	z-index: 4;
+}
+
+#Mateus #squirtle #tail::after {
+	content: '';
+	width: 5em;
+	height: 5em;
+	background-color: #94d5cd;
+	border-radius: 3em;
+	position: absolute;
+	top: 2em;
+	left: 9em;
+	z-index: 4;
+}
+
+
+
+/*
+ * PIKACHU
+ */
+
+ #Mateus #pikachu {
+	position: relative;
+	width: 10em;
+	height: 12em;
+	float: left;
+  top: 0em;
+  left: -45em;
+}
+#Mateus #pikachu #body2 {
+	width: 8em;
+	height: 13em;
+	background-color: #ffd622;
+	border-radius: 5em 5em 0 0;
+	z-index: 150;
+	position: relative;
+}
+
+#Mateus #pikachu #feet2::before {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #ffd622;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 12em;
+}
+
+#Mateus #pikachu #feet2::after {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #ffd622;
+	border-radius: 0 0 1em 1em;
+	position: absolute;
+	top: 12em;
+	left: 6em;
+}
+
+#Mateus #pikachu #ear {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 80px solid #ffd622;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  rotate: 65deg;
+}
+
+#Mateus #pikachu #left-ear2 {
+	width: 0;
+	height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #000000;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: -1em;
+  left: 2 em;
+  rotate: 65deg;
+}
+
+#Mateus #pikachu #ear2 {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 80px solid #ffd622;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: -1em;
+  left: 3em;
+  rotate: 360deg;
+}
+
+#Mateus #pikachu #right-ear2 {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #000000;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: -1em;
+  left: 6.8em;
+  rotate: 360deg;
+}
+
+#Mateus #pikachu #eyes2::before {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 1em;
+}
+
+#Mateus #pikachu #eyes2::after {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #fff;
+	border-radius: 1em;
+	position: absolute;
+	top: 2em;
+	left: 4.5em;
+}
+
+#Mateus #pikachu #pupils2::before {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 5.25em;
+}
+
+#Mateus #pikachu #pupils2::after {
+	content: '';
+	width: 0.75em;
+	height: 1.5em;
+	background-color: #000;
+	border-radius: 0 1em 1em 0;
+	position: absolute;
+	top: 2em;
+	left: 1.75em;
+}
+
+#Mateus #pikachu #nostrils2::before {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3em;
+}
+
+#Mateus #pikachu #nostrils2::after {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background-color: #000;
+	border-radius: 1em;
+	position: absolute;
+	top: 3em;
+	left: 3.75em;
+}
+
+#Mateus #pikachu #mouth2::before {
+	content: '';
+	width: 1.25em;
+	height: 0.75em;
+	background-color: #942e58;
+	border-radius: 0 0 3em 3em;
+	position: absolute;
+	top: 3.75em;
+	left: 2.85em;
+}
+
+#Mateus #pikachu #arms2::before {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #ffd622;
+	border-radius: 2em 0 0 2em;
+	position: absolute;
+	top: 5.75em;
+	left: -1.5em;
+	z-index: 10;
+}
+
+#Mateus #pikachu #arms2::after {
+	content: '';
+	width: 2em;
+	height: 2em;
+	background-color: #ffd622;
+	border-radius: 0 2em 2em 0;
+	position: absolute;
+	top: 5.75em;
+	left: 7.75em;
+	z-index: 10;
+}
+
+#Mateus #pikachu #flame2 {
+	content: '';
+	width: 2.5em;
+	height: 2.5em;
+	overflow: hidden;
+  	border-bottom-right-radius: 50%;
+ 	border-bottom-left-radius: 50%; 
+	border-top-left-radius: 50%;
+	-webkit-transform:rotate(-45deg);
+	background-color: #FFB800;
+	position: absolute;
+	top: 8em;
+	left: 9em;
+	z-index: 300;
+
+}
+
+#Mateus #pikachu #right-cheek {
+  background: #fe2f13;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3.5em;
+  left: 0.5em;
+}
+
+#Mateus #pikachu #left-cheek {
+  background: #fe2f13;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3.5em;
+  left: 5em;
+}
+
+#Mateus #pikachu #left-ear {
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-right: 80px solid #000000;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 3.5em;
+  left: 5em;
+}
+
+#tail2 {
+    background: #98390b;
+    width: 15px;
+    height: 50px;
+	position: absolute;
+	top: 8em;
+	left: 8em;
+	rotate: 60deg;
+}
+
+#tail3 {
+    background: #98390b;
+    width: 15px;
+    height: 30px;
+	position: absolute;
+	top: 7.5em;
+	left: 9em;
+	rotate: -30deg;
+}
+
+#tail4 {
+    background: #ffb700;
+    width: 15px;
+    height: 31px;
+	position: absolute;
+	top: 6.4em;
+	left: 8.99em;
+	rotate: 60deg;
+}
+
+#tail5 {
+    background: #ffb700;
+    width: 20px;
+    height: 40px;
+	position: absolute;
+	top: 4.84em;
+	left: 9.5em;
+	rotate: 150deg;
+}
+
+#tail6 {
+    background: #ffb700;
+    width: 70px;
+    height: 30px;
+	position: absolute;
+	top: 3.5em;
+	left: 9em;
+	rotate: 0deg;
+}
+
